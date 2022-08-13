@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Form</h1>
+        <form action="#" method="post" onsubmit="return validateForm()">
+            <div class="section">
+                <div class="label">
+                    <label for="cloud">Select your source:</label>
+                </div>
+                
+                <select name="cloud" class="cloud" id="cloud">
+                    <option value="google" selected>Google Cloud Storage</option>
+                    <option value="aws">Amazon web service</option>
+                    <option value="DigitalOcean">DigitalOcean Spaces</option>
+                </select>
+            
+
+            </div>
+            <div class="section">
+                <div class="label">
+                    <label for="pipeline">Provide a name for pipeline :</label>
+                </div>
+                
+                <input type="text" minlength="5" name="pipeline" id="pipeline" placeholder="e.g., cust_shop_energy_gkateway001" required>
+             </div>
+             <div class="section">
+                <div class="label">
+                    <label for="gcs-project">GCS project name :</label>
+                </div>
+                
+                <input type="text" minlength="5" name="gcs-project" id="gcs-project" placeholder="project-id" required>
+             </div>
+             <div class="section">
+                <div class="label">
+                    <label for="gcs-bucket">GCS bucket name :</label>
+                </div>
+                
+                <input type="text" minlength="5" name="gcs-bucket" id="gcs-bucket" placeholder="gs://your-bucket" required>
+             </div> 
+             <div class="section">
+                <div class="label">
+                    <label for="cloud-input">Input Cloud Storage File(s) :</label>
+                </div>
+                <div>
+                    <input type="text" minlength="5" name="cloud-input" id="cloud-input" placeholder="GCS location of your files" required>
+                    <p>Example: <br> gs://your-bucket/your-files/01.csv</p>
+                </div>
+                
+             </div> 
+             <div class="section">
+                <div class="label">
+                    <label for="gcs-cred">GCS credentials :</label>
+                </div>
+                
+                <input type="password" minlength="5" name="gcs-cred" id="gcs-cred" required>
+             </div>
+             <div class="section">
+                <div class="label">
+                    <label for="run">Run Every :</label>
+                </div>
+                
+                <input type="number" name="run" id="run" placeholder="(in minutes)" required>
+             </div> 
+             <div class="section">
+                <div class="label">
+                    <input type="submit" value="Create">
+                </div>
+                
+                <input type="reset" value="cancel">
+             </div> 
+
+             
+
+
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
