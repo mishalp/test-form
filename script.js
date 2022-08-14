@@ -1,13 +1,21 @@
 var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+var errField = ""
+
 function validateForm(){
 
 
 
-    var pipeline = document.getElementById('pipeline').value;
-    var gcsProject = document.getElementById('gcs-project').value;
-    var gcsBucket = document.getElementById('gcs-bucket').value;
-    var cloudInput = document.getElementById('cloud-input').value;
-    var run = document.getElementById('run').value;
+    var pipeline = document.getElementById('pipeline');
+    var gcsProject = document.getElementById('gcs-project');
+    var gcsBucket = document.getElementById('gcs-bucket');
+    var cloudInput = document.getElementById('cloud-input');
+    var run = document.getElementById('run');
+
+    var err = document.querySelectorAll('.err');
+    err.forEach(element => {
+        element.innerHTML = ""
+    });
+    
 
      if(validate(pipeline)
       && validate(gcsProject)
@@ -16,18 +24,22 @@ function validateForm(){
          && validate(run)){
         return true;
      }else{
+        
        return false;   
      }
 }
 
     function validate(obj){
-
-        if(format.test(obj)){
-            if(obj[0] == "+" || obj[0] == "-" || obj[0] == "_"){
-                alert("Fields cannot start with '+','_','-'");
+        var val = obj.value;
+        console.log(obj.id);
+        document.getElementsByClassName(obj.id)[0].innerHTML = ""
+        if(format.test(val)){
+            if(val[0] == "+" || val[0] == "-" || val[0] == "_"){
+                document.getElementsByClassName(obj.id)[0].innerHTML = `<p>Fields cannot start with '+','_','-'</p>`;
             }else{
-            alert("special characters not allowed");
+            document.getElementsByClassName(obj.id)[0].innerHTML = `<p>special characters not allowed</p>`
             }
+
             return false
         }else{
             return true

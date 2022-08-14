@@ -25,6 +25,9 @@ body{
     align-items: center;
     width: 35rem;
 }
+.section > div > span{
+    color: red;
+}
 label{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
