@@ -1,6 +1,17 @@
 var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
 var errField = ""
 
+function inputValidation(){
+    var err = document.querySelectorAll('.inp');
+    err.forEach(element => {
+        element.addEventListener('input', (e)=>{
+            var input = document.getElementById(e.srcElement.id);
+            validate(input)
+        })
+    });
+}
+inputValidation()
+
 function validateForm(){
 
 
@@ -39,9 +50,12 @@ function validateForm(){
             }else{
             document.getElementsByClassName(obj.id)[0].innerHTML = `<p>special characters not allowed</p>`
             }
-
+            console.log(obj);
+            const field = document.getElementById(obj.id);
+            obj.classList.add('error');
             return false
         }else{
+            obj.classList.remove('error');
             return true
         }
     }

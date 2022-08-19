@@ -29,7 +29,7 @@
                     <label for="pipeline">Provide a name for pipeline :</label>
                 </div>
                 
-                <div><input type="text" minlength="5" name="pipeline" id="pipeline" placeholder="e.g., cust_shop_energy_gkateway001" required>
+                <div><input type="text" class="inp" minlength="5" name="pipeline" id="pipeline" placeholder="e.g., cust_shop_energy_gkateway001" required>
                 <span class="pipeline err"></span>
                 </div>
              </div>
@@ -38,7 +38,7 @@
                     <label for="gcs-project err">GCS project name :</label>
                 </div>
                 
-                <div><input type="text" minlength="5" name="gcs-project" id="gcs-project" placeholder="project-id" required>
+                <div><input type="text" class="inp" minlength="5" name="gcs-project" id="gcs-project" placeholder="project-id" required>
                 <span class="gcs-project err"></span>
                 </div>
              </div>
@@ -47,7 +47,7 @@
                     <label for="gcs-bucket">GCS bucket name :</label>
                 </div>
                 
-                <div><input type="text" minlength="5" name="gcs-bucket" id="gcs-bucket" placeholder="gs://your-bucket" required>
+                <div><input type="text" class="inp" minlength="5" name="gcs-bucket" id="gcs-bucket" placeholder="gs://your-bucket" required>
                 <span class="gcs-bucket err"></span>
                 </div>
              </div> 
@@ -56,7 +56,7 @@
                     <label for="cloud-input">Input Cloud Storage File(s) :</label>
                 </div>
                 <div>
-                    <input type="text" minlength="5" name="cloud-input" id="cloud-input" placeholder="GCS location of your files" required>
+                    <input type="text" class="inp" minlength="5" name="cloud-input" id="cloud-input" placeholder="GCS location of your files" required>
                     <p>Example: <br> gs://your-bucket/your-files/01.csv</p>
                     <span class="cloud-input err"></span>
                 </div>
@@ -74,7 +74,7 @@
                     <label for="run">Run Every :</label>
                 </div>
                 
-                <div><input type="number" name="run" id="run" placeholder="(in minutes)" required>
+                <div><input type="number" class="inp" name="run" id="run" placeholder="(in minutes)" required>
                 <span class="run err"></span>
                 </div>
              </div> 
